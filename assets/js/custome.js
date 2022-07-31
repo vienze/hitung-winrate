@@ -1,1 +1,34 @@
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('0 1=7.6(\'#1\');0 5=7.6(\'#5\');0 3=7.6(\'#3\');0 a=7.6(\'#a\');0 8=7.6(\'#8\');8.p.o="t";0 j=(1,5,3)=>{4 g=1*(5/9);4 e=1-g;4 k=9-3;4 f=9/k;4 h=e*f;4 i=h-1;w y.z(i)};0 l=()=>{0 d=j(1.2,5.2,3.2);0 m=`C D E<b>&c;${d}</b>&c;n F x B A n r&c;<b>${3.2}%</b>`;8.p.o="v";1.2="";5.2="";3.2="";8.u=m};a.s("q",l);',42,42,'const|tMatch|value|reqWr|let|tWr|querySelector|document|tHasil|100|hasil||nbsp|totalNum|totalLose|wrResult|totalWin|seratus|totalSemua|rumus|sisaWr|showHasil|text|win|display|style|click|rate|addEventListener|none|innerHTML|block|return|lose|Math|round|mendapatkan|untuk|Anda|memerlukan|sekitar|tanpa'.split('|'),0,{}))
+//Get Element
+const tMatch = document.querySelector('#tMatch');
+const tWr = document.querySelector('#tWr');
+const reqWr = document.querySelector('#reqWr');
+const hasil = document.querySelector('#hasil');
+const tHasil = document.querySelector('#tHasil');
+
+//set hasil display none
+tHasil.style.display = "none";
+
+//function rumus
+const rumus = (tMatch, tWr, reqWr) => {
+    let totalWin = tMatch * (tWr / 100);
+    let totalLose = tMatch - totalWin;
+    let sisaWr = 100 - reqWr;
+    let wrResult = 100 / sisaWr;
+    let seratus = totalLose * wrResult;
+    let totalSemua = seratus - tMatch;
+    return Math.round(totalSemua)
+};
+
+//function hasil
+const showHasil = () => {
+    const totalNum = rumus(tMatch.value, tWr.value, reqWr.value);
+    const text = `Anda memerlukan sekitar<b>&nbsp;${totalNum}</b>&nbsp;win tanpa lose untuk mendapatkan win rate&nbsp;<b>${reqWr.value}%</b> `;
+    tHasil.style.display = "block";
+    tMatch.value = "";
+    tWr.value = "";
+    reqWr.value = "";
+    tHasil.innerHTML = text
+};
+
+//event click for show hasil
+hasil.addEventListener("click", showHasil);
