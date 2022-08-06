@@ -5,7 +5,7 @@ Hitung WinRate adalah tools untuk menghitung winrate hero mobile legend
 
 ## Demo
 
-- [Hitung WinRate](https://Herudin1998.github.io/hitung-winrate)
+- [Hitung WinRate](https://vienze.github.io/hitung-winrate)
 
 ## Feedback
 
